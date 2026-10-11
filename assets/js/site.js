@@ -21,6 +21,7 @@ document.querySelectorAll('[data-language-link]').forEach(link => {
     if (location.hash) link.href = link.href.split('#')[0] + location.hash;
   });
 });
+function initPublicationSearch() {
 const search = document.getElementById('publication-search');
 const count = document.getElementById('search-count');
 const empty = document.getElementById('search-empty');
@@ -43,3 +44,7 @@ if (search) {
   search.addEventListener('input', update);
   update();
 }
+
+}
+initPublicationSearch();
+window.addEventListener("portfolio:updated",initPublicationSearch);
